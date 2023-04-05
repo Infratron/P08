@@ -44,4 +44,8 @@ body,html{
     color: var(--accent);
 }
 
-.incrcustom{color: #cf5c36};
+.incrcustom{
+    color: #cf5c36;
+    font-size: 60px
+
+};
