@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Nova+Square&display=swap');
+
+ 
+*{
+    font-family: 'Arvo', serif;
+    font-family: 'Nova Square', cursive;
+}
+
+body,html{
+    background-color : var(--whitecustom);
+}
+
+:root
+{
+    --primarycol : #344e41;
+    --secondcol : #cf5c36;
+    --accent : #efc88b;
+    --whitecustom : #e5e5e5;
+    --blackcustom : #2b2929;
+}
+
+.navcustom{
+    background-color: var(--accent);
+}
+
+.logo-szcustom{
+    height: 25px;
+}
+
+.bg-custom{
+    background: linear-gradient(180deg, rgba(36, 36, 36, 0.222), rgb(207, 92, 54)), url(./media/backgrounddiv.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.it{
+    color: var(--accent);
+}
+
+.incrcustom{color: #cf5c36};
