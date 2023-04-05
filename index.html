@@ -16,7 +16,7 @@
   <body>
 
     <!-- sezione navbar -->
-        <nav class="navbar navbar-expand-lg navcustom fixed-top">
+        <nav id="MainNavbar" class="navbar navbar-expand-lg bg-transparent fixed-top">
             <div class="container-fluid">
               <a class="navbar-brand" href="#"><img src="./media/logo.png" alt="logo" class="logo-szcustom"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +44,7 @@
                 </ul>
                 <form class="d-flex" role="search">
                   <input class="form-control me-2" type="search" placeholder="Nome Prodotto" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Cerca</button>
+                  <button class="btn btn-outline-dark" type="submit">Cerca</button>
                 </form>
               </div>
             </div>
@@ -55,7 +55,7 @@
      <header class="container-fluid">
         <div class="row bg-custom vh-100 align-items-center">
             <div class="col-12 text-center">
-                <h1 class="display-4">Presto<span class="it">.it</span></h1>
+                <h1 class="display-1" data-aos="fade-down" data-aos-duration="2000">Presto<span class="it">.it</span></h1>
             </div>
         </div>
     </header>
@@ -65,13 +65,12 @@
     <section class="container">
         <div class="row my-5">
             <div class="col-12 col-md-6">
-                <img class ="img-fluid img-resize" src="./media/scatoloni.png" alt="immagine non disponibile">
+                <img class ="img-fluid"  src="./media/scatoloni.png" alt="immagine non disponibile" data-aos="fade-right">
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6" data-aos="fade-right">
                 <p class="text-center my-5 display-6">Clienti Soddisfatti<span class="d-block incrcustom">0+</span></p>
                 <p class="text-center my-5 display-6">Prodotti Venduti<span class="d-block incrcustom">0+</span></p>
                 <p class="text-center my-5 display-6">Recensioni<span class="d-block incrcustom">0+</span></p>
-                <p></p>
             </div>
         </div>
     </section>

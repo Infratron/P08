@@ -6,6 +6,14 @@
     font-family: 'Nova Square', cursive;
 }
 
+.navcustom{
+   background-color: var(--accent);
+}
+
+.transnav{
+    transition: 0.4s;
+}
+
 body,html{
     background-color : var(--whitecustom);
 }
@@ -19,9 +27,6 @@ body,html{
     --blackcustom : #2b2929;
 }
 
-.navcustom{
-    background-color: var(--accent);
-}
 
 .logo-szcustom{
     height: 25px;
