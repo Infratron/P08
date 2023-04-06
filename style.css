@@ -49,3 +49,34 @@ body,html{
     font-size: 60px
 
 };
+
+/* sezione swiper */
+
+.swiper{
+    width: 400px;
+    height: 150px;
+  }
+
+.card-custom{
+    height: 250px;
+    width: 600px;
+    border : 2px solid var(--blackcustom);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 600px){
+    .card-custom{
+        height: 250px;
+        width: 300px;
+        border : 2px solid var(--blackcustom);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

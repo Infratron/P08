@@ -11,10 +11,13 @@ let Terzospan = document.querySelector('#Terzospan')
 
 window.addEventListener('scroll', ()=>{
 
-    if(window.scrollY > 0){
+    if(window.scrollY > 0 ){
         MainNavbar.classList.remove('bg-transparent');
         MainNavbar.classList.add('navcustom');
-    }else{
+    } else if(window.scrollY == 0 && varcontr == true){
+        MainNavbar.classList.remove('bg-transparent');
+    }
+    else {
         MainNavbar.classList.add('bg-transparent');
         MainNavbar.classList.remove('navcustom');
         MainNavbar.classList.add('transnav');
@@ -57,3 +60,24 @@ let observed = new IntersectionObserver(
     }
 )
 observed.observe(Primospan);
+
+
+let toggler = document.querySelector('.navbar-toggler-icon');
+
+// dichiarazione variabile di controllo 
+
+let varcontr = false;
+
+toggler.addEventListener('click', ()=>{
+
+    if(toggler == window.scrollY == 0 && varcontr == false){
+        MainNavbar.classList.remove('bg-transparent');
+        MainNavbar.classList.add('navcustom');
+        varcontr = true;
+    }  else{
+        MainNavbar.classList.add('bg-transparent');
+        MainNavbar.classList.remove('navcustom');
+        varcontr = false;
+    }
+    
+});
