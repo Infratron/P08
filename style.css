@@ -80,3 +80,35 @@ body,html{
         justify-content: center;
     }
 }
+
+.card-inters{
+    background-color: #2b2929;
+    color: var(--accent);
+    border: 2px solid var(--secondcol);
+    border-radius: 20px;
+}
+
+.card-inters-sec{
+    transition: 0.8s;
+    transform: scale(1.2);
+    background-color: var(--whitecustom);
+    color: var(--blackcustom);
+}
+
+@media screen and (max-width: 600px){
+    .card-inters:hover{
+        transition: 0.8s;
+        transform: scale(0.8);
+        background-color: var(--whitecustom);
+        color: var(--blackcustom);
+    }
+}
+
+.footer{
+    background: var(--blackcustom);
+    color: var(--whitecustom);
+}
+
+.links-nav{
+    text-decoration: none;
+}

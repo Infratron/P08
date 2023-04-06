@@ -81,3 +81,16 @@ toggler.addEventListener('click', ()=>{
     }
     
 });
+
+let cardinters = document.querySelectorAll('.card-inters');
+
+cardinters.forEach((card, i)=>{
+
+    card.addEventListener('mouseenter', ()=>{
+        cardinters[i].classList.add('card-inters-sec')
+    })
+
+    card.addEventListener('mouseleave' , ()=>{
+        cardinters[i].classList.remove('card-inters-sec')
+    })
+});
