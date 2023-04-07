@@ -92,5 +92,6 @@ cardinters.forEach((card, i)=>{
 
     card.addEventListener('mouseleave' , ()=>{
         cardinters[i].classList.remove('card-inters-sec')
+        cardinters[i].classList.add('card-inters-sec-trans')
     })
 });
