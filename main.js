@@ -59,6 +59,7 @@ let observed = new IntersectionObserver(
     
     }
 )
+
 observed.observe(Primospan);
 
 

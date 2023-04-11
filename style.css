@@ -116,3 +116,13 @@ body,html{
 .links-nav{
     text-decoration: none;
 }
+
+.announcement-card{
+    min-height: 300px;
+    border: 2px solid var(--blackcustom);
+    border-radius: 20px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
