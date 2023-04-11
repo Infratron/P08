@@ -77,6 +77,8 @@ let cardsWrapper = document.querySelector('#cardsWrapper');
 
 function showCards (array){
     cardsWrapper.innerHTML= '';
+
+    array.sort((a , b)=> Number(b.price - a.price))
     array.forEach((element)=>{
         let div = document.createElement('div');
         div.classList.add('col-12' , 'col-md-3', 'my-4')
@@ -113,4 +115,55 @@ checkInputs.forEach((checkInputs)=>{
     })
 })
 
+// cattura range input and number
+
+let inputPrice = document.querySelector('#inputPrice');
+let incrementNumber = document.querySelector('#incrementNumber');
+
+// funzione settaggio valore input price 
+
+function setInputPrice(){
+
+    let prices = data.map((annuncio)=> (annuncio.price));
+    let maxPrice = Math.max(...prices);
+    inputPrice.max = Math.ceil(maxPrice);
+    inputPrice.value = Math.ceil(maxPrice);
+    incrementNumber.innerHTML = Math.ceil(maxPrice);
+}
+
+setInputPrice();
+
+// funzione che filtra per prezzo
+
+function filterByPrice(prezzo){
+    let filtered = data.filter((annuncio)=> annuncio.price <= prezzo );
+    showCards(filtered)
+}
+// evento al cambio dell'input range
+
+inputPrice.addEventListener('input', ()=>{
+    console.log(inputPrice)
+    filterByPrice(inputPrice.value);
+    incrementNumber.innerHTML = inputPrice.value
+})
+
+let wordInput = document.querySelector('#wordInput');
+
+    // funzione filtra per parola
+
+    function filterbyWord(nome){
+
+        let filtered = data.filter ( (annuncio)=> annuncio.name.toLowerCase().includes(nome.toLowerCase()) );
+
+        showCards(filtered);
+
+    }
+
+    // evento digitazione parola sull'input
+   
+    wordInput.addEventListener('input', ()=>{
+
+        filterbyWord(wordInput.value);
+
+    })
 });

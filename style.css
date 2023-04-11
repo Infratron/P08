@@ -126,3 +126,9 @@ body,html{
     justify-content: space-evenly;
     align-items: center;
 }
+
+.inputNumber{
+    color: var(--secondcol);
+    font-size: 20px;
+    font-weight: 900;
+};
