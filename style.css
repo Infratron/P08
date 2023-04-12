@@ -161,6 +161,7 @@ body,html{
     position: absolute;
     z-index: 1;
     background-color: var(--secondcol);
+    cursor: pointer;
 }
 
 .moved{
@@ -169,4 +170,22 @@ body,html{
     border-radius: 50%;
     border: 2px solid var(--blackcustom);
     position: absolute;
+    transition: 1s;
+}
+
+.teacher-card{
+    height: 350px;
+    width: 250px;
+    border-radius: 20px;
+    border: 2px solid var(--primarycol);
+    box-shadow: 2px 0px 0px 2px var(--secondcol);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position : center;
+    color: var(--whitecustom);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
 }
