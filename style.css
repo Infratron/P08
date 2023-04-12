@@ -131,4 +131,42 @@ body,html{
     color: var(--secondcol);
     font-size: 20px;
     font-weight: 900;
-};
+}
+
+.imgcardcustom{
+ height: 200px;
+ border-radius: 50%;
+}
+
+/* pagina chi siamo */
+.circle{
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    border : 2px dashed var(--secondcol);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.opener{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    background-color: var(--secondcol);
+}
+
+.moved{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 2px solid var(--blackcustom);
+    position: absolute;
+}

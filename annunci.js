@@ -79,11 +79,13 @@ function showCards (array){
     cardsWrapper.innerHTML= '';
 
     array.sort((a , b)=> Number(b.price - a.price))
-    array.forEach((element)=>{
+
+    array.forEach((element, i)=>{
         let div = document.createElement('div');
         div.classList.add('col-12' , 'col-md-3', 'my-4')
         div.innerHTML=`
         <div class="announcement-card">
+        <img class="my-2 imgcardcustom" src="https://picsum.photos/${200 + i}" alt="">
         <p class="h2">${element.name}</p>
         <h3>${element.category}</h3>
         <h3>${element.price}€</h3>
@@ -97,13 +99,16 @@ showCards(data);
 
 // mostra card filtrate per categoria al click sul radio button
 
-function filterByCategory(categoria){
+function filterByCategory(array){
+    // trasformiamo la nodelist in un array, sfruttando il papà array ed il suo metodo from che mi trasforma una nodelist in questo caso specifico in un array
+
+    let categoria = Array.from(checkInputs).find((button)=> button.checked).id;
 
     if(categoria != 'All'){
-        let filtered = data.filter((annuncio)=> annuncio.category == categoria);
-        showCards(filtered);
+        let filtered = array.filter((annuncio)=> annuncio.category == categoria);
+        return filtered;
     } else {
-        showCards(data);
+       return data;
     }
 }
 
@@ -111,7 +116,7 @@ let checkInputs = document.querySelectorAll('.form-check-input');
 
 checkInputs.forEach((checkInputs)=>{
     checkInputs.addEventListener('click', ()=>{
-        filterByCategory(checkInputs.id);
+        globalFilter();
     })
 })
 
@@ -135,27 +140,27 @@ setInputPrice();
 
 // funzione che filtra per prezzo
 
-function filterByPrice(prezzo){
-    let filtered = data.filter((annuncio)=> annuncio.price <= prezzo );
-    showCards(filtered)
+function filterByPrice(array){
+    let filtered = array.filter((annuncio)=> annuncio.price <= Math.ceil(inputPrice.value));
+    return filtered;
 }
 // evento al cambio dell'input range
 
 inputPrice.addEventListener('input', ()=>{
-    console.log(inputPrice)
-    filterByPrice(inputPrice.value);
+
     incrementNumber.innerHTML = inputPrice.value
+    globalFilter();
 })
 
 let wordInput = document.querySelector('#wordInput');
 
     // funzione filtra per parola
 
-    function filterbyWord(nome){
+    function filterbyWord(array){
 
-        let filtered = data.filter ( (annuncio)=> annuncio.name.toLowerCase().includes(nome.toLowerCase()) );
-
-        showCards(filtered);
+        let nome = wordInput.value;
+        let filtered = array.filter ( (annuncio)=> annuncio.name.toLowerCase().includes(nome.toLowerCase()) );
+        return filtered;
 
     }
 
@@ -163,7 +168,20 @@ let wordInput = document.querySelector('#wordInput');
    
     wordInput.addEventListener('input', ()=>{
 
-        filterbyWord(wordInput.value);
+        globalFilter();
 
     })
+
+    // filtro dei filtri, funzione globale
+
+function globalFilter(){
+
+    let filteredByCategory =  filterByCategory(data);
+    let filteredByPrice = filterByPrice(filteredByCategory);
+    let filteredByWord = filterbyWord(filteredByPrice);
+    showCards(filteredByWord);
+
+}
 });
+
+
